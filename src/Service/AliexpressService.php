@@ -5,6 +5,7 @@ namespace Bitlimited\Aliexpress\Service;
 
 
 use Bitlimited\Aliexpress\Exception\AliexpressException;
+use GuzzleHttp\Client;
 
 class AliexpressService
 {
@@ -14,23 +15,39 @@ class AliexpressService
 
     private $password;
 
+    private $uri;
+
     public function setAuth(string $email, string $token, string $password)
     {
         $this->email = $email;
         $this->token = $token;
         $this->password = $password;
+        $this->uri = "https://alix.brand.company/api_top3/";
     }
 
     public function request(array $param):array
     {
         $request = [
+            'debug' => true,
             'headers' => [
                 'Authorization' => $this->createAccessToken(),
-                'X-User-Authorization' => $this->createBasicToken()
+                'X-User-Authorization' => $this->createBasicToken(),
+                'Accept: application/json;charset=UTF-8'
+            ],
+            'form_params' => [
+                'method' => $param['method']
             ]
         ];
+        if(empty($param['params'])) {
+            $request = array_merge($request['form_params'], $param['params']);
+        }
 
-        return $request;
+        $client = new Client();
+
+
+        $response = $client->request('POST', $this->uri, $request);
+
+        return [(string)$response->getBody()->getContents()];
     }
 
     private function createBasicToken():string
