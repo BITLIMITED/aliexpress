@@ -18,12 +18,13 @@
     },
     "autoload": {
         "psr-4": {
+            "Bitlimited\\Aliexpress\\Exception\\": "src/Exception/",
             "Bitlimited\\Aliexpress\\Service\\": "src/Service/"
         }
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.2-dev"
+            "dev-master": "0.3-dev"
         }
     }
 }
