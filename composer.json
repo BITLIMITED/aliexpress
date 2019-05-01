@@ -16,6 +16,11 @@
         "php": "^7.1.3",
         "guzzlehttp/guzzle": "^6.3@dev"
     },
+    "autoload": {
+        "psr-4": {
+            "Bitlimited\\Aliexpress\\": "src/"
+        }
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "0.1-dev"
