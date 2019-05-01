@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Bitlimited\Service;
+namespace Bitlimited\Aliexpress\Service;
 
 
-class AliexpressServer
+class AliexpressService
 {
     private $email;
 
