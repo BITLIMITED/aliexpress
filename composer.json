@@ -1,0 +1,19 @@
+{
+    "name": "bitlimited/aliexpress",
+    "description": "Integration Service for Aliexpress API",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["aliexpress","api service","tmall"],
+    "homepage": "https://answer.rest",
+    "authors": [
+        {
+            "name": "Viktron Nazarov",
+            "email": "bitlimited.dev@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.1.3",
+        "guzzlehttp/guzzle": "^6.3@dev"
+    }
+}
