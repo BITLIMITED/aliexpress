@@ -7,11 +7,11 @@
     "homepage": "https://answer.rest",
     "authors": [
         {
-            "name": "Viktron Nazarov",
+            "name": "Viktor Nazarov",
             "email": "bitlimited.dev@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": "^7.1.3",
         "guzzlehttp/guzzle": "^6.3@dev"

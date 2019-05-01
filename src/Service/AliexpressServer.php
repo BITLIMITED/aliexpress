@@ -21,7 +21,7 @@ class AliexpressServer
 
     public function request(array $param)
     {
-        return static::createAccessToken();
+        return $this->createAccessToken();
     }
 
     private function createAccessToken()
