@@ -31,14 +31,14 @@ class AliexpressService
             'debug' => true,
             'headers' => [
                 'Authorization' => $this->createAccessToken(),
-                'X-User-Authorization' => $this->createBasicToken(),
-                'Accept: application/json;charset=UTF-8'
+                'X-User-Authorization' => $this->createBasicToken()
+                //'Accept: application/json;charset=UTF-8'
             ],
             'form_params' => [
                 'method' => $param['method']
             ]
         ];
-        if(empty($param['params'])) {
+        if(!empty($param['params'])) {
             $request = array_merge($request['form_params'], $param['params']);
         }
 
