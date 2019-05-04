@@ -17,6 +17,14 @@ class AliexpressService
 
     private $uri;
 
+    private $methods;
+
+    public function __construct()
+    {
+        $cfg = file_get_contents('../methods.json');
+        $this->methods = json_decode($cfg);
+    }
+
     public function setAuth(string $email, string $token, string $password)
     {
         $this->email = $email;
@@ -32,7 +40,6 @@ class AliexpressService
             'headers' => [
                 'Authorization' => $this->createAccessToken(),
                 'X-User-Authorization' => $this->createBasicToken()
-                //'Accept: application/json;charset=UTF-8'
             ],
             'form_params' => [
                 'method' => $param['method']
@@ -47,7 +54,7 @@ class AliexpressService
 
         $response = $client->request('POST', $this->uri, $request);
 
-        return [(string)$response->getBody()->getContents()];
+        return [(string)$response->getBody()->getContents(), $this->methods];
     }
 
     private function createBasicToken():string

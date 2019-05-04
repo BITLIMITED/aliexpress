@@ -1,0 +1,17 @@
+[
+  {
+    "name": "catalog"
+  },
+  {
+    "name": "trade"
+  },
+  {
+    "name": "logistic"
+  },
+  {
+    "name": "message"
+  },
+  {
+    "name": "issue"
+  }
+]
